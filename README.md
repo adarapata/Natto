@@ -13,7 +13,7 @@ Unityで使える簡易的なActiveRecordもどき
 
 4. 対応したDaoクラスを作成する。[サンプル](https://github.com/adarapata/Easy-ActiveRecord-Unity/blob/master/SampleDao.cs)
 
-※ パスワードが設定されているDBは非対応です
+※ 現在、sqlite(パスワード無し) のみ動作確認しています。
 
 
 制作にあたり、下記の資料を参考にさせていただきました。
