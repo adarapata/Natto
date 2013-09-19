@@ -64,7 +64,7 @@ public class AcitiveRecord<T> where T : IDataAccessObject, new()
         var result = db.ExecuteSQL(sql);
     }
 
-    public void ChacheClear()
+    public static void ClearCache()
     {
         cache = null;
     }
