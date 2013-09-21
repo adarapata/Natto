@@ -9,7 +9,7 @@ Unityで使える簡易的なActiveRecordもどき
 
 2. `Assets/StreamingAssets/` 下にdbファイルを配置する
 
-3. [ここ](https://github.com/adarapata/Easy-ActiveRecord-Unity/blob/master/database/SqliteDatabase.cs#L17)を修正する
+3. `DbNameCarrier` をオブジェクトにアタッチして、dbnameを任意の名前に変更する
 
 4. 対応したDaoクラスを作成する。[サンプル](https://github.com/adarapata/Easy-ActiveRecord-Unity/blob/master/SampleDao.cs)
 
