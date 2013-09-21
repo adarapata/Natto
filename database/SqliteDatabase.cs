@@ -14,7 +14,6 @@ public class SqliteDatabase : IDatabase
     {
         get
         {
-            if (m_instance == null) { m_instance = new SqliteDatabase("database_name.db"); }
             return m_instance;
         }
     }
@@ -26,6 +25,10 @@ public class SqliteDatabase : IDatabase
         dbName = db;
     }
 
+    public static void SetDatabaseName(string databaseName)
+    {
+        m_instance = new SqliteDatabase(databaseName);
+    }
     /// <summary>
     /// 任意のSQLを実行します
     /// </summary>
