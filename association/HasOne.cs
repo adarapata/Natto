@@ -1,7 +1,8 @@
 using System.Collections;
 using System;
+using ActiveRecord.Interface;
 
-namespace ActiveRecord {
+namespace ActiveRecord.Association {
     public class HasOne<T> where T : IDataAccessObject, new()
     {
         public T node { get; set; }

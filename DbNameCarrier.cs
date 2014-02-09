@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ActiveRecord.Database;
 
 namespace ActiveRecord {
     public class DbNameCarrier : MonoBehaviour {

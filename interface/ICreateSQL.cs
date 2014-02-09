@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace ActiveRecord {
+namespace ActiveRecord.Interface {
     /// <summary>
     /// DBを書き換えるSQL文を実装するインタフェース
     /// </summary>

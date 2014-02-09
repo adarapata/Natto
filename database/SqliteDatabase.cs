@@ -2,8 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Mono.Data.Sqlite;
+using ActiveRecord.Interface;
 
-namespace ActiveRecord {
+namespace ActiveRecord.Database {
     public class SqliteDatabase : IDatabase
     {
         static SqliteDatabase m_instance;
