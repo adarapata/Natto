@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace ActiveRecord.Interface {
+namespace Natto.Interface {
     /// <summary>
     /// DBの情報をオブジェクトにマッピングするインタフェース
     /// </summary>

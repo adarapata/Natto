@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using ActiveRecord.Database;
-using ActiveRecord.Interface;
+using Natto.Database;
+using Natto.Interface;
 
-namespace ActiveRecord {
+namespace Natto {
     public class FactoryDatabase {
         static public IDatabase CreateDatabase()
         {

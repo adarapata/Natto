@@ -2,9 +2,9 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using System;
-using ActiveRecord.Interface;
+using Natto.Interface;
 
-namespace ActiveRecord
+namespace Natto
 {
     public class AcitiveRecord<T> where T : IDataAccessObject, new()
     {

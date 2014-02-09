@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using ActiveRecord.Database;
+using Natto.Database;
 
-namespace ActiveRecord {
+namespace Natto {
     public class DbNameCarrier : MonoBehaviour {
 
     public string dbname = "database_name.db";

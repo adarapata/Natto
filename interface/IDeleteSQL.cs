@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace ActiveRecord.Interface {
+namespace Natto.Interface {
     public interface IDeleteSQL {
         bool deleteFlag { get; set; }
     }

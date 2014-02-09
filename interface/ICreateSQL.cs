@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace ActiveRecord.Interface {
+namespace Natto.Interface {
     /// <summary>
     /// DBを書き換えるSQL文を実装するインタフェース
     /// </summary>

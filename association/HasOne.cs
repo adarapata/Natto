@@ -1,8 +1,8 @@
 using System.Collections;
 using System;
-using ActiveRecord.Interface;
+using Natto.Interface;
 
-namespace ActiveRecord.Association {
+namespace Natto.Association {
     public class HasOne<T> where T : IDataAccessObject, new()
     {
         public T node { get; set; }

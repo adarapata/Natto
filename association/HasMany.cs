@@ -2,9 +2,9 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ActiveRecord.Interface;
+using Natto.Interface;
 
-namespace ActiveRecord.Association {
+namespace Natto.Association {
     public class HasMany<T> where T : IDataAccessObject, new()
     {
         public List<T> nodes { get; set; }

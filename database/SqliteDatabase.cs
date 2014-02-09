@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Mono.Data.Sqlite;
-using ActiveRecord.Interface;
+using Natto.Interface;
 
-namespace ActiveRecord.Database {
+namespace Natto.Database {
     public class SqliteDatabase : IDatabase
     {
         static SqliteDatabase m_instance;
