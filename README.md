@@ -1,4 +1,4 @@
-Easy-ActiveRecord-Unity
+Natto
 =======================
 
 Unityで使える簡易的なActiveRecordもどき
