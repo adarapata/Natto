@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
-
+using ActiveRecord;
 
 public class SampleDao : AcitiveRecord<SampleDao>, IDataAccessObject, ICreateSQL, IDeleteSQL
 {

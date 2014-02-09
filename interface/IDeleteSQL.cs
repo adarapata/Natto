@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public interface IDeleteSQL {
-    bool deleteFlag { get; set; }
+namespace ActiveRecord {
+    public interface IDeleteSQL {
+        bool deleteFlag { get; set; }
+    }
 }

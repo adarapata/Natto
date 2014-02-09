@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DbNameCarrier : MonoBehaviour {
+namespace ActiveRecord {
+    public class DbNameCarrier : MonoBehaviour {
 
     public string dbname = "database_name.db";
-    void Awake()
-    {
-    	SqliteDatabase.SetDatabaseName(dbname);
-    }
-	// Use this for initialization
-	void Start () {
+        void Awake()
+        {
+            SqliteDatabase.SetDatabaseName(dbname);
+        }
+        // Use this for initialization
+        void Start () {
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        }
+
+        // Update is called once per frame
+        void Update () {
+
+        }
+    }
 }

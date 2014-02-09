@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 
-public class FactoryDatabase {
-    static public IDatabase CreateDatabase()
-    {
-        return SqliteDatabase.instance;
+namespace ActiveRecord {
+    public class FactoryDatabase {
+        static public IDatabase CreateDatabase()
+        {
+            return SqliteDatabase.instance;
+        }
     }
 }
