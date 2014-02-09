@@ -1,8 +1,12 @@
 ﻿using System.Collections;
+using Natto.Database;
+using Natto.Interface;
 
-public class FactoryDatabase {
-    static public IDatabase CreateDatabase()
-    {
-        return SqliteDatabase.instance;
+namespace Natto {
+    public class FactoryDatabase {
+        static public IDatabase CreateDatabase()
+        {
+            return SqliteDatabase.instance;
+        }
     }
 }

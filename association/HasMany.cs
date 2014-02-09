@@ -1,13 +1,16 @@
-﻿using System.Collections;
+using System.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Natto.Interface;
 
-public class HasMany<T> where T : IDataAccessObject, new()
-{
-    public List<T> nodes { get; set; }
-    public HasMany(Func<T, bool> predicate)
+namespace Natto.Association {
+    public class HasMany<T> where T : IDataAccessObject, new()
     {
-        nodes = AcitiveRecord<T>.Where(predicate);
+        public List<T> nodes { get; set; }
+        public HasMany(Func<T, bool> predicate)
+        {
+            nodes = AcitiveRecord<T>.Where(predicate);
+        }
     }
 }

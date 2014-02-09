@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public interface IDeleteSQL {
-    bool deleteFlag { get; set; }
+namespace Natto.Interface {
+    public interface IDeleteSQL {
+        bool deleteFlag { get; set; }
+    }
 }

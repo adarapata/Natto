@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
-
+using Natto;
+using Natto.Interface;
 
 public class SampleDao : AcitiveRecord<SampleDao>, IDataAccessObject, ICreateSQL, IDeleteSQL
 {
