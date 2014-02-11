@@ -45,5 +45,11 @@ namespace Natto {
             string query = "DELETE FROM " + table + " WHERE id = " + colomn["id"].ToString() + ";";
             return query;
         }
+
+        static public string CreateSelectSql(string table)
+        {
+            string query = "SELECT * FROM " + table + ";";
+            return query;
+        }
     }
 }

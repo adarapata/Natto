@@ -40,8 +40,8 @@ namespace Natto
             if (cache != null) return cache;
             cache = new List<T> ();
             List<T> list = new List<T> ();
-            string tableName = new T().tableName;
-            foreach (var colomn in db.ExecuteSQL("SELECT * FROM " + tableName + ";")) {
+            string sql = SqlBuilder.CreateSelectSql(new T().tableName);
+            foreach (var colomn in db.ExecuteSQL(sql)) {
                 var dao = new T ();
                 dao.Mapping(colomn);
                 list.Add (dao);
