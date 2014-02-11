@@ -14,7 +14,7 @@ Unityで使える簡易的なActiveRecordもどき
 
 3. `DbNameCarrier` をオブジェクトにアタッチして、dbnameを任意の名前に変更する
 
-4. 対応したDaoクラスを作成する。[サンプル](https://github.com/adarapata/Easy-ActiveRecord-Unity/blob/master/SampleDao.cs)
+4. 対応したDaoクラスを作成する。[サンプル](https://github.com/adarapata/Natto/blob/master/Sample/SampleDao.cs)
 
 ## 使い方
 
