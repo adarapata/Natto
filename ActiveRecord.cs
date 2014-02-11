@@ -63,7 +63,7 @@ namespace Natto
         public static void Create<T> (T attribute) where T : ActiveRecord<T>, new()
         {
             string sql = SqlBuilder.CreateInsertSql(attribute.tableName, attribute.records);
-            var result = db.ExecuteSQL (sql);
+            db.ExecuteSQL (sql);
         }
 
         public static void Update<T> (T attribute) where T : ActiveRecord<T>, new()
@@ -73,13 +73,13 @@ namespace Natto
                 return;
             }
             string sql = SqlBuilder.CreateUpdteSql(attribute.tableName, attribute.records);
-            var result = db.ExecuteSQL (sql);
+            db.ExecuteSQL (sql);
         }
 
         public static void Delete<T> (T attribute) where T : ActiveRecord<T>, new()
         {
             string sql = SqlBuilder.CreateDeleteSql(attribute.tableName, attribute.records);
-            var result = db.ExecuteSQL (sql);
+            db.ExecuteSQL (sql);
         }
 
         public static void ClearCache ()
