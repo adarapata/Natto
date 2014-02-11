@@ -6,7 +6,7 @@
 
 Unityで使える簡易的なActiveRecordもどき
 
-## 使い方
+## インストール
 
 1. Unityプロジェクト内の任意の場所にclone `git clone git@github.com:adarapata/Easy-ActiveRecord-Unity.git`
 
@@ -15,6 +15,36 @@ Unityで使える簡易的なActiveRecordもどき
 3. `DbNameCarrier` をオブジェクトにアタッチして、dbnameを任意の名前に変更する
 
 4. 対応したDaoクラスを作成する。[サンプル](https://github.com/adarapata/Easy-ActiveRecord-Unity/blob/master/SampleDao.cs)
+
+## 使い方
+
+### 全部取得
+```C#
+DaoClass.FindAll(); // => List<DaoClass>
+```
+
+### 一つ取得(条件付)
+```C#
+DaoClass.Find(n => n.id == 2); // => DaoClass
+```
+
+### 複数取得(条件付)
+```C#
+DaoClass.Where(n => n.hoge == "hoge"); // => List<DaoClass>
+```
+
+### 新規レコード追加
+```C#
+DaoClass dao = new DaoClass { foo = "foo", bar = "bar" };
+DaoClass.Create(dao); // => Void
+```
+
+### レコード更新
+```C#
+DaoClass dao = DaoClass.Find(n => n.id == 2);
+dao.foo = "foo2";
+DaoClass.Update(dao); // => Void
+```
 
 ※ 現在、sqlite(パスワード無し) のみ動作確認しています。
 
