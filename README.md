@@ -52,4 +52,5 @@ DaoClass.Update(dao); // => Void
 制作にあたり、下記の資料を参考にさせていただきました。
 
 https://sites.google.com/site/nrapmed/unityrepo/unisqlite
+
 http://terasur.blog.fc2.com/blog-entry-265.html
