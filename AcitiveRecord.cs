@@ -6,8 +6,13 @@ using Natto.Interface;
 
 namespace Natto
 {
-    public class ActiveRecord<T> where T : IDataAccessObject, new()
+    public class ActiveRecord<T> : IDataAccessObject
+                         where T : IDataAccessObject, new()
     {
+        virtual public string tableName { get { return "Active"; } }
+        public int id { get { return  GetInt("id"); } }
+        public ActiveRecord(){}
+
         protected Dictionary<string, object> records;
         public object this[string key]
         {
@@ -31,7 +36,7 @@ namespace Natto
             if (cache != null) return cache;
             cache = new List<T> ();
             List<T> list = new List<T> ();
-            string tableName = new T ().tableName;
+            string tableName = new T().tableName;
             foreach (var colomn in db.ExecuteSQL("SELECT * FROM " + tableName + ";")) {
                 var dao = new T ();
                 dao.Mapping(colomn);
@@ -51,26 +56,25 @@ namespace Natto
             return FindAll ().Where (predicate).ToList ();
         }
 
-        public static void Create<T> (T attribute) where T : IDataAccessObject, ICreateSQL, new()
+        public static void Create<T> (T attribute) where T : ActiveRecord<T>, new()
         {
-            string sql = "INSERT INTO " + new T ().tableName + attribute.CreateSQL ();
+            string sql = SqlBuilder.CreateInsertSql(attribute.tableName, attribute.records);
             var result = db.ExecuteSQL (sql);
         }
 
-        public static void Update<T> (T attribute) where T : IDataAccessObject, ICreateSQL, new()
+        public static void Update<T> (T attribute) where T : ActiveRecord<T>, new()
         {
             if (attribute.id == 0) {
                 Create (attribute);
                 return;
             }
-            string sql = "UPDATE " + new T ().tableName + " SET " + attribute.UpdateSQL ();
+            string sql = SqlBuilder.CreateUpdteSql(attribute.tableName, attribute.records);
             var result = db.ExecuteSQL (sql);
         }
 
-        public static void Delete<T> (T attribute) where T : IDataAccessObject, IDeleteSQL, new()
+        public static void Delete<T> (T attribute) where T : ActiveRecord<T>, new()
         {
-            if (!attribute.deleteFlag) return;
-            string sql = "DELETE FROM " + new T ().tableName + " WHERE id = " + attribute.id.ToString () + ";";
+            string sql = SqlBuilder.CreateDeleteSql(attribute.tableName, attribute.records);
             var result = db.ExecuteSQL (sql);
         }
 
