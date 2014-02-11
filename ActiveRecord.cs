@@ -92,32 +92,32 @@ namespace Natto
             records = datas;
         }
 
-        public int GetInt(string key)
+        protected int GetInt(string key)
         {
             return Convert.ToInt32(this[key]);
         }
 
-        public string GetString(string key)
+        protected string GetString(string key)
         {
             return (string)(this[key]);
         }
 
-        public bool GetBool(string key)
+        protected bool GetBool(string key)
         {
             return Convert.ToBoolean(this[key]);
         }
 
-        public void SetInt(string key, int value)
+        protected void SetInt(string key, int value)
         {
             this[key] = value;
         }
 
-        public void SetString(string key, string value)
+        protected void SetString(string key, string value)
         {
             this[key] = value;
         }
 
-        public void SetBool(string key, bool value)
+        protected void SetBool(string key, bool value)
         {
             this[key] = value;
         }
