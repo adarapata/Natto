@@ -8,7 +8,7 @@ Unityで使える簡易的なActiveRecordもどき
 
 ## インストール
 
-1. Unityプロジェクト内の任意の場所にclone `git clone git@github.com:adarapata/Easy-ActiveRecord-Unity.git`
+1. Unityプロジェクト内の任意の場所にclone `git@github.com:adarapata/Natto.git`
 
 2. `Assets/StreamingAssets/` 下にdbファイルを配置する
 
