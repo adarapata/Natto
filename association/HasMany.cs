@@ -10,7 +10,7 @@ namespace Natto.Association {
         public List<T> nodes { get; set; }
         public HasMany(Func<T, bool> predicate)
         {
-            nodes = AcitiveRecord<T>.Where(predicate);
+            nodes = ActiveRecord<T>.Where(predicate);
         }
     }
 }

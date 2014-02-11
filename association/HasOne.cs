@@ -8,7 +8,7 @@ namespace Natto.Association {
         public T node { get; set; }
         public HasOne(Func<T, bool> predicate)
         {
-            node = AcitiveRecord<T>.Find(predicate);
+            node = ActiveRecord<T>.Find(predicate);
         }
     }
 }
