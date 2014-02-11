@@ -8,7 +8,7 @@ namespace Natto.Interface {
     public interface IDataAccessObject
     {
         string tableName { get; }
-        int id { get; set; }
+        int id { get; }
         void Mapping(Dictionary<string, object> colomn);
     }
 }
