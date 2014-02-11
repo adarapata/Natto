@@ -6,8 +6,15 @@ using Natto.Interface;
 
 namespace Natto
 {
-    public class AcitiveRecord<T> where T : IDataAccessObject, new()
+    public class ActiveRecord<T> where T : IDataAccessObject, new()
     {
+        protected Dictionary<string, object> records;
+        public object this[string key]
+        {
+            get { return records[key]; }
+            set { records[key] = value; }
+        }
+
         static protected IDatabase m_db;
         private static List<T> cache;
 
@@ -27,7 +34,7 @@ namespace Natto
             string tableName = new T ().tableName;
             foreach (var colomn in db.ExecuteSQL("SELECT * FROM " + tableName + ";")) {
                 var dao = new T ();
-                dao.Mapping (colomn);
+                dao.Mapping(colomn);
                 list.Add (dao);
                 cache.Add (dao);
             }
@@ -70,6 +77,41 @@ namespace Natto
         public static void ClearCache ()
         {
             cache = null;
+        }
+
+        public void Mapping(Dictionary<string, object> datas)
+        {
+            records = datas;
+        }
+
+        public int GetInt(string key)
+        {
+            return Convert.ToInt32(this[key]);
+        }
+
+        public string GetString(string key)
+        {
+            return (string)(this[key]);
+        }
+
+        public bool GetBool(string key)
+        {
+            return Convert.ToBoolean(this[key]);
+        }
+
+        public void SetInt(string key, int value)
+        {
+            this[key] = value;
+        }
+
+        public void SetString(string key, string value)
+        {
+            this[key] = value;
+        }
+
+        public void SetBool(string key, bool value)
+        {
+            this[key] = value;
         }
     }
 }

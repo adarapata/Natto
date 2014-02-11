@@ -72,8 +72,10 @@ namespace Natto.Database {
             {
                 Dictionary<string, object> fields = new Dictionary<string, object>();
                 int count = result.FieldCount;
+
                 for (int i = 0; i < count; i++)
                 {
+                    System.Type clas = result.GetFieldType(i);
                     fields.Add(result.GetName(i), result.GetValue(i));
                 }
                 yield return fields;
