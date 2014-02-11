@@ -97,6 +97,11 @@ namespace Natto
             return Convert.ToInt32(this[key]);
         }
 
+        protected float GetFloat(string key)
+        {
+            return Convert.ToSingle(this[key]);
+        }
+
         protected string GetString(string key)
         {
             return (string)(this[key]);
@@ -108,6 +113,11 @@ namespace Natto
         }
 
         protected void SetInt(string key, int value)
+        {
+            this[key] = value;
+        }
+
+        protected void SetFloat(string key, float value)
         {
             this[key] = value;
         }
