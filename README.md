@@ -46,6 +46,12 @@ dao.foo = "foo2";
 DaoClass.Update(dao); // => Void
 ```
 
+### レコード削除
+```C#
+DaoClass dao = DaoClass.Find(n => n.id == 2);
+DaoClass.Delete(dao); // => Void
+```
+
 ※ 現在、sqlite(パスワード無し) のみ動作確認しています。
 
 
