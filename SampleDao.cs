@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Natto;
 using Natto.Interface;
 
-public class SampleDao : AcitiveRecord<SampleDao>, IDataAccessObject, ICreateSQL, IDeleteSQL
+public class SampleDao : ActiveRecord<SampleDao>, IDataAccessObject, ICreateSQL, IDeleteSQL
 {
     public string tableName { get { return "SampleTable"; } }
     public bool deleteFlag { get; set; }
