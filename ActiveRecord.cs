@@ -10,7 +10,12 @@ namespace Natto
                          where T : IDataAccessObject, new()
     {
         virtual public string tableName { get { return "Active"; } }
-        public int id { get { return  GetInt("id"); } }
+        public int id {
+            get {
+               if(records.ContainsKey("id")) return GetInt("id"); 
+               return 0;
+            }
+        }
         public ActiveRecord(){}
 
         protected Dictionary<string, object> records;
