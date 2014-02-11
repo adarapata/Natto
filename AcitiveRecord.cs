@@ -17,7 +17,11 @@ namespace Natto
         public object this[string key]
         {
             get { return records[key]; }
-            set { records[key] = value; }
+            set
+            {
+                if(records == null) records = new Dictionary<string, object>();
+                records[key] = value;
+            }
         }
 
         static protected IDatabase m_db;
