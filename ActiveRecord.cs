@@ -19,7 +19,7 @@ namespace Natto
         public ActiveRecord(){}
 
         protected Dictionary<string, object> records;
-        public object this[string key]
+        protected object this[string key]
         {
             get { return records[key]; }
             set
@@ -115,26 +115,6 @@ namespace Natto
         protected bool GetBool(string key)
         {
             return Convert.ToBoolean(this[key]);
-        }
-
-        protected void SetInt(string key, int value)
-        {
-            this[key] = value;
-        }
-
-        protected void SetFloat(string key, float value)
-        {
-            this[key] = value;
-        }
-
-        protected void SetString(string key, string value)
-        {
-            this[key] = value;
-        }
-
-        protected void SetBool(string key, bool value)
-        {
-            this[key] = value;
         }
     }
 }
