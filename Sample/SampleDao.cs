@@ -8,7 +8,7 @@ public class SampleDao : ActiveRecord<SampleDao>
 {
     public override string tableName { get { return "SampleTable"; } }
 
-    public int param_int { get { return GetInt("param_int"); } set { SetInt("param_int", value); } }
-    public string param_string { get { return GetString("param_string"); } set { SetString("param_string", value); } }
-    public bool param_bool { get { return GetBool("param_bool"); } set { SetBool("param_bool", value); } }
+    public int param_int { get { return GetInt("param_int"); } set { this["param_int"] = value; } }
+    public string param_string { get { return GetString("param_string"); } set { this["param_string"] = value; } }
+    public bool param_bool { get { return GetBool("param_bool"); } set { this["param_bool"] = value; } }
 }
