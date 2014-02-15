@@ -19,7 +19,7 @@ namespace Natto
         public ActiveRecord(){}
 
         protected Dictionary<string, object> records;
-        public object this[string key]
+        protected object this[string key]
         {
             get { return records[key]; }
             set
