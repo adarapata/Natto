@@ -121,13 +121,8 @@ namespace Natto
 
         protected string GetString(string key)
         {
+            if(this[key] is System.DBNull)return "";
             return (string)(this[key]);
-        }
-
-        protected String GetStringParmitNull(string key)
-        {
-            if(this[key] is System.DBNull)return null;
-            return GetString(key);
         }
 
         protected bool GetBool(string key)
