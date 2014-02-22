@@ -102,7 +102,7 @@ namespace Natto
             return Convert.ToInt32(this[key]);
         }
 
-        protected int? GetIntParmitNull(string key)
+        protected int? GetIntOrNull(string key)
         {
             if(this[key] is System.DBNull)return null;
             return GetInt(key);
@@ -113,7 +113,7 @@ namespace Natto
             return Convert.ToSingle(this[key]);
         }
 
-        protected float? GetFloatParmitNull(string key)
+        protected float? GetFloatOrNull(string key)
         {
             if(this[key] is System.DBNull)return null;
             return GetFloat(key);
@@ -130,7 +130,7 @@ namespace Natto
             return Convert.ToBoolean(this[key]);
         }
 
-        protected bool? GetBoolParmitNull(string key)
+        protected bool? GetBoolOrNull(string key)
         {
             if(this[key] is System.DBNull)return null;
             return GetBool(key);
