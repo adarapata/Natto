@@ -12,7 +12,7 @@ Unityで使える簡易的ORマッパー
 
 2. `Assets/StreamingAssets/` 下にdbファイルを配置する
 
-3. `DbNameCarrier` をオブジェクトにアタッチして、dbnameを任意の名前に変更する
+3. `DbNameCarrier` をオブジェクトにアタッチする
 
 4. 対応したDaoクラスを作成する。[サンプル](https://github.com/adarapata/Natto/blob/master/Sample/SampleDao.cs)
 
@@ -52,7 +52,7 @@ DaoClass dao = DaoClass.Find(n => n.id == 2);
 DaoClass.Delete(dao); // => Void
 ```
 
-※ 現在、sqlite(パスワード無し) のみ動作確認しています。
+※ 現在、sqlite(パスワード無し)、MySQL 5.6.14 の動作確認をしています。
 
 
 制作にあたり、下記の資料を参考にさせていただきました。
@@ -60,3 +60,5 @@ DaoClass.Delete(dao); // => Void
 https://sites.google.com/site/nrapmed/unityrepo/unisqlite
 
 http://terasur.blog.fc2.com/blog-entry-265.html
+
+http://qiita.com/oishihiroaki/items/6eb9732efb44d4986428
