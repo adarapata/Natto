@@ -10,7 +10,16 @@ namespace Natto {
         public string hostName,database,userName,port,password;
         void Awake()
         {
-            MysqlDatabase.SetDatabaseName(hostName,database,userName,port,password);
+            switch(databaseType)
+            {
+                 case DatabaseType.SQLite: 
+                     SqliteDatabase.SetDatabaseName(dbname);
+                     break;
+                 case DatabaseType.MySQL:
+                     MysqlDatabase.SetDatabaseName(hostName,database,userName,port,password);
+                     break;
+            }
+            FactoryDatabase.databaseType = databaseType;
         }
         // Use this for initialization
         void Start () {
@@ -22,5 +31,4 @@ namespace Natto {
 
         }
     }
- public enum DatabaseType { SQLite, MySQL }
 }
