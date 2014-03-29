@@ -10,7 +10,7 @@ Unityで使える簡易的ORマッパー
 
 1. Unityプロジェクト内の任意の場所にclone `git@github.com:adarapata/Natto.git`
 
-2. `Assets/StreamingAssets/` 下にdbファイルを配置する
+2. `Assets/StreamingAssets/` 下にdbファイルを配置する(SQLiteの場合)
 
 3. `DbNameCarrier` をオブジェクトにアタッチする
 
