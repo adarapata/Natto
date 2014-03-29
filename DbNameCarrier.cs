@@ -5,10 +5,12 @@ using Natto.Database;
 namespace Natto {
     public class DbNameCarrier : MonoBehaviour {
 
-    public string dbname = "database_name.db";
+        public DatabaseType databaseType;
+        public string dbname = "database_name.db";
+        public string hostName,database,userName,port,password;
         void Awake()
         {
-            SqliteDatabase.SetDatabaseName(dbname);
+            MysqlDatabase.SetDatabaseName(hostName,database,userName,port,password);
         }
         // Use this for initialization
         void Start () {
@@ -20,4 +22,5 @@ namespace Natto {
 
         }
     }
+ public enum DatabaseType { SQLite, MySQL }
 }
