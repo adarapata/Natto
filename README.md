@@ -12,7 +12,7 @@ Unityで使える簡易的ORマッパー
 
 2. `Assets/StreamingAssets/` 下にdbファイルを配置する(SQLiteの場合)
 
-3. `DbNameCarrier` をオブジェクトにアタッチする
+3. `Natto/Resources/DatabaseConfig` に接続情報を設定する
 
 4. 対応したDaoクラスを作成する。[サンプル](https://github.com/adarapata/Natto/blob/master/Sample/SampleDao.cs)
 
