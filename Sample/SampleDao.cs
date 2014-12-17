@@ -7,6 +7,7 @@ using Natto;
 public class SampleDao : ActiveRecord<SampleDao>
 {
     public override string tableName { get { return "SampleTable"; } }
+    public override string primaryKey { get { return "sample_dao_id"; } }
 
     public int param_int { get { return GetInt("param_int"); } set { this["param_int"] = value; } }
     public string param_string { get { return GetString("param_string"); } set { this["param_string"] = value; } }

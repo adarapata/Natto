@@ -10,9 +10,11 @@ namespace Natto
                          where T : IDataAccessObject, new()
     {
         virtual public string tableName { get { return "Active"; } }
+        virtual public string primaryKey { get { return "id"; } }
+
         public int id {
             get {
-               if(records.ContainsKey("id")) return GetInt("id"); 
+               if (records.ContainsKey (primaryKey)) return GetInt (primaryKey);
                return 0;
             }
         }
@@ -67,7 +69,7 @@ namespace Natto
 
         public static void Create<T> (T attribute) where T : ActiveRecord<T>, new()
         {
-            string sql = SqlBuilder.CreateInsertSql(attribute.tableName, attribute.records);
+            string sql = SqlBuilder.CreateInsertSql(attribute.tableName, attribute.records, attribute.primaryKey);
             db.ExecuteSQL (sql);
         }
 
@@ -77,13 +79,13 @@ namespace Natto
                 Create (attribute);
                 return;
             }
-            string sql = SqlBuilder.CreateUpdteSql(attribute.tableName, attribute.records);
+            string sql = SqlBuilder.CreateUpdteSql(attribute.tableName, attribute.records, attribute.primaryKey);
             db.ExecuteSQL (sql);
         }
 
         public static void Delete<T> (T attribute) where T : ActiveRecord<T>, new()
         {
-            string sql = SqlBuilder.CreateDeleteSql(attribute.tableName, attribute.records);
+            string sql = SqlBuilder.CreateDeleteSql(attribute.tableName, attribute.records, attribute.primaryKey);
             db.ExecuteSQL (sql);
         }
 
