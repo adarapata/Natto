@@ -7,7 +7,7 @@ namespace Natto {
     /// SQL文を作成する
     /// </summary>
     public class SqlBuilder {
-        static public string CreateUpdteSql(string table, Dictionary<string, object> colomns)
+        static public string CreateUpdteSql(string table, Dictionary<string, object> colomns, string primaryKey)
         {
             string query = "UPDATE " + table + " SET ";
             foreach(var key in colomns.Keys)
@@ -15,18 +15,18 @@ namespace Natto {
                 query += key + " = '" + colomns[key].ToString() + "',";
             }
             query = query.Remove(query.Length-1);
-            query += " WHERE id = " + colomns["id"].ToString() + ";";
+            query += " WHERE " + primaryKey + " = " + colomns[primaryKey].ToString() + ";";
             return query;
         }
 
-        static public string CreateInsertSql(string table, Dictionary<string, object> colomns)
+        static public string CreateInsertSql(string table, Dictionary<string, object> colomns, string primaryKey)
         {
             string query = "INSERT INTO " + table + " (";
             string colomnQuery = "";
             string valueQuery = "VALUES(";
             foreach(var key in colomns.Keys)
             {
-                if(key == "id")continue;
+                if(key == primaryKey)continue;
                 colomnQuery += key + ",";
                 valueQuery += "'" + colomns[key] + "',";
             }
@@ -40,9 +40,9 @@ namespace Natto {
             return query;
         }
 
-        static public string CreateDeleteSql(string table, Dictionary<string, object> colomn)
+        static public string CreateDeleteSql(string table, Dictionary<string, object> colomn, string primaryKey)
         {
-            string query = "DELETE FROM " + table + " WHERE id = " + colomn["id"].ToString() + ";";
+            string query = "DELETE FROM " + table + " WHERE " + primaryKey + " = " + colomn[primaryKey].ToString() + ";";
             return query;
         }
 
