@@ -94,7 +94,7 @@ namespace Natto
             cache = null;
         }
 
-        public void Mapping(Dictionary<string, object> datas)
+        virtual public void Mapping(Dictionary<string, object> datas)
         {
             records = datas;
         }
