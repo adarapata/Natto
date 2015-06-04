@@ -13,6 +13,7 @@ namespace Natto.Editor
             var config = target as DatabaseConfig;
             config.databaseType = (DatabaseType)EditorGUILayout.EnumPopup ("Database Type", config.databaseType);
             ShowDatabaseConfigField (config);
+            EditorUtility.SetDirty(config);
         }
 
         private void ShowDatabaseConfigField (DatabaseConfig config)
