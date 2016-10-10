@@ -1,0 +1,9 @@
+{
+  "Title" : "Natto",
+  "Author" : "adarapata",
+  "License" : "MIT",
+  "RequiresFullReimport" : true,  
+  "Dependencies" : {
+     "adarapata/Natto" : "master"
+  }
+}
